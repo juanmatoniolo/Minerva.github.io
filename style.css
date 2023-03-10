@@ -15,7 +15,7 @@ p {
 
 .columna{
     background-color: #bab7b725; 
-    box-shadow: 3px 3px 15px 8px #d3d3d3d1;
+    box-shadow: 3px 3px 6px 4px #d3d3d3d1;
     padding: 0;
      margin: 15px auto;
      padding: 10px 1px;
@@ -34,12 +34,13 @@ p {
 .navbar{
     background-color: #6C5A94;
 }
-
-
+.personas{
+    padding: 40px;
+}
 
 .descripcion {
   background-color: #bab7b725;
-  box-shadow: 3px 3px 15px 8px #d3d3d3d1;
+  box-shadow: 3px 3px 6px 4px #d3d3d3d1;
   margin: 15px auto;
   padding: 10px 1px;
   border-radius: 10px;
@@ -47,14 +48,14 @@ p {
   width: 330px;
 }
 .descripcion-texto{
-    margin-left: 4px;
+    margin-left: 10px;
 }
 h3,h4,h1,h2,h5,h6{
     color: #000;
 }
 .contactos-persona-1{
     background-color: #bab7b725;
-    box-shadow: 3px 3px 15px 8px #d3d3d3d1;
+    box-shadow: 3px 3px 6px 4px #d3d3d3d1;
     margin: 15px auto;
     padding: 10px 1px;
     border-radius: 10px;
