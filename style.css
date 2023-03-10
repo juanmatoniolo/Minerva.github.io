@@ -1,38 +1,60 @@
-body{
-    font-size: 14px;
+body {
+  font-family: "Blinker", sans-serif;
+  color: #BAB7B7 ;
+}
+
+.datos {
+  padding: 0%;
+  margin: 0%;
+}
+
+p {
+  font-size: 14px;
+  padding: 0;
+}
+
+.columna{
+    background-color: #bab7b725; 
     padding: 0;
-    text-align: justify;
+     margin: 15px auto;
+     padding: 10px 1px;
+     border-radius: 20px; 
+     height: 184px; 
+     width: 330px;
+
 }
 
-header{
-    text-align: center;
-    position: sticky;
-    top: 0%;
-    z-index: 1;
-    border: 0ch;
-    background-color: rgba(255, 255, 255, 0.67);
+
+.descripcion {
+  background-color: #bab7b725;
+
+  margin: 15px auto;
+  padding: 10px 1px;
+  border-radius: 10px;
+
+  width: 330px;
+}
+.descripcion-texto{
+    margin-left: 4px;
+}
+h3,h4,h1,h2,h5,h6{
+    color: #000;
+}
+.contactos-persona-1{
+    background-color: #bab7b725;
+    margin: 15px auto;
+    padding: 10px 1px;
+    border-radius: 10px;
+
 }
 
-.datos{
+.img-redes{
     padding: 0%;
     margin: 0% auto;
 }
 
-.carousel-control-next,
-.carousel-control-prev{
-    filter: invert(100%);
-}
 
-.img-fluid{
-    width: 85px;
-    object-fit: cover;
-    padding: 0%;
-    margin: 0% auto;
-}
-.contacto{
-padding: 10px;
-margin: 0% ;
-}
-.p{
-    margin: 0%;
-}
+
+
+
+
