@@ -15,6 +15,7 @@ p {
 
 .columna{
     background-color: #bab7b725; 
+    box-shadow: 3px 3px 15px 8px #d3d3d3d1;
     padding: 0;
      margin: 15px auto;
      padding: 10px 1px;
@@ -24,10 +25,21 @@ p {
 
 }
 
+.navbar {
+    background-color: #6C5A94;
+}
+.nav-g{
+    background-color: #6C5A94;
+}
+.navbar{
+    background-color: #6C5A94;
+}
+
+
 
 .descripcion {
   background-color: #bab7b725;
-
+  box-shadow: 3px 3px 15px 8px #d3d3d3d1;
   margin: 15px auto;
   padding: 10px 1px;
   border-radius: 10px;
@@ -42,6 +54,7 @@ h3,h4,h1,h2,h5,h6{
 }
 .contactos-persona-1{
     background-color: #bab7b725;
+    box-shadow: 3px 3px 15px 8px #d3d3d3d1;
     margin: 15px auto;
     padding: 10px 1px;
     border-radius: 10px;
@@ -52,6 +65,14 @@ h3,h4,h1,h2,h5,h6{
     padding: 0%;
     margin: 0% auto;
     text-align: center;
+}
+.contactos-persona-2{
+    background-color: #bab7b725;
+    box-shadow: 3px 3px 15px 8px #d3d3d3d1;
+    margin: 15px auto;
+    padding: 10px 1px;
+    border-radius: 10px;
+
 }
 
 
