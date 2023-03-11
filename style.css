@@ -53,26 +53,48 @@ p {
 h3,h4,h1,h2,h5,h6{
     color: #000;
 }
+
+.contactos
+{
+    margin-top: 32px;
+}
+
+
 .contactos-persona-1{
     background-color: #bab7b725;
     box-shadow: 3px 3px 6px 4px #d3d3d3d1;
-    margin: 15px auto;
-    padding: 10px 1px;
     border-radius: 10px;
+    min-width: 300px;
+    max-width: 368px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    
+
 
 }
-
 .img-redes{
     padding: 0%;
-    margin: 0% auto;
-    text-align: center;
+    text-align: start;
 }
+
+
 .contactos-persona-2{
     background-color: #bab7b725;
     box-shadow: 3px 3px 15px 8px #d3d3d3d1;
-    margin: 15px auto;
-    padding: 10px 1px;
     border-radius: 10px;
+    min-width: 300px;
+    max-width: 368px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    
+
+}
+.contactos-nombre{
+    text-align: start;
+    padding: 0;
+    margin: -15 auto;
+    
+    
 
 }
 
