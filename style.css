@@ -76,7 +76,7 @@ nav {
 .descripcion {
   background-color: #bab7b725;
   box-shadow: 3px 3px 6px 4px #d3d3d3d1;
-  margin: 15px auto;
+  margin: 16px auto;
   padding: 10px 1px;
   border-radius: 10px;
 
@@ -95,7 +95,7 @@ h6 {
 }
 
 .contactos {
-  margin-top: 32px;
+  margin: 0% auto;
 }
 
 .contactos-persona-1 {
@@ -193,4 +193,9 @@ small{
   border: 1px solid #0000002a;
   border-radius: 12px;
   height: 2em;
+}
+
+.primerUso{
+  height: 300px;
+  width: 100%;
 }
