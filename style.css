@@ -183,22 +183,28 @@
 }
 
 .redes-sociales .btn {
-	font-size: 12px;
-	display: flex;
-	flex-flow: row nowrap;
-	background-color: #cd7fa7;
-	border-radius: 12px;
-	border: 1px solid #000000;
-	width: 30%;
-	height: 2.6em;
-	justify-content: start;
+    font-size: 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #cd7fa7;
+    border-radius: 12px;
+    border: 1px solid #000000;
+    width: 32%;
+    height: 2.6em;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
 }
 
 
 .iconos-redes {
-	margin-right: .4em;
-	max-width: 100%;
-	height: auto;
+	margin-right: 5px;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	width: 14px;
 
 }
 
@@ -451,5 +457,81 @@
 	.redes-sociales .btn {
 		font-size: .8em;
 		width: 30%;
+	}
+}
+
+
+/*========================   Footer   ===========================*/
+footer {
+	background-color: #6c5c94;
+	align-content: center;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+
+
+.redes-creador {
+	margin: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.redes-nombres {
+	padding-left: 2px;
+	margin: 0%;
+}
+
+.texto-copy {
+	color: #fff;
+	margin: 1px;
+	font-size: large;
+}
+
+
+.contenedor-img-login {
+	width: 40%;
+	margin: auto;
+}
+
+.perritoquenove {
+	margin-bottom: -2em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.footer-iconos {
+	width: 26px;
+	height: 26px;
+	color: #fff;
+
+}
+
+
+
+/* Estilos para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.redes-creador {
+		margin: 10px;
+		display: flex;
+		justify-content: center;
+		gap: 12em;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+/* Estilos para pantallas extra grandes */
+@media (min-width: 1200px) {
+	.redes-creador {
+		margin: 10px;
+		display: flex;
+		justify-content: center;
+		gap: 12em;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
