@@ -60,7 +60,7 @@
 }
 
 .imagenen-mascota {
-	width: 50%;
+	width: 45% !important;
 	height: 12em !important;
 
 	display: flex;
