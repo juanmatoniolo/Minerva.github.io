@@ -325,8 +325,8 @@
     <script>
         function insertarDatosMascota() {
             const urlParams = new URLSearchParams(window.location.search);
-            const registroId = urlParams.get("mascota");
-            const urldatosmascotas = `https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/${registroId}.json`;
+           
+            const urldatosmascotas = `https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/${urlParams}.json`;
 
             fetch(urldatosmascotas)
                 .then((response) => response.json())
