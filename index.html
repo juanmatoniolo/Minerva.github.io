@@ -169,13 +169,13 @@
         <div class="contenedor-datos-mascota">
           <img src="./assets/latido-del-corazon.png" title="icnos" class="iconos-datos-mascota ">
           <p class="edad-mascota">
-            6 aprox
+            edad
           </p>
         </div>
         <div class="contenedor-datos-mascota">
           <img src="./assets/locato.png" title="icnos" class="iconos-datos-mascota ">
           <p class="ubicacion-mascota">
-            &nbsp; .Chajarí, Entre Ríos
+         Ubicacion
           </p>
         </div>
       </div>
@@ -184,7 +184,7 @@
 
 
     <section class="descripcion">
-      <p class="descripcion-mascota" id="descripcion"> pequeña</p>
+      <p class="descripcion-mascota" id="descripcion"> Descripcion de la mascota </p>
     </section>
 
 
@@ -302,7 +302,8 @@
 
       // Reemplazar datos en la página
       document.querySelector(".nombre-mascota").textContent = datosMascota.nombre || 'Sin nombre';
-      document.querySelector(".edad-mascota").textContent = `${datosMascota.edad.trim()} aprox` || 'Edad desconocida';
+      document.querySelector(".sexo-mascota").textContent = datosMascota.sexo || 'Sexo de la mascota';
+      document.querySelector(".edad-mascota").textContent = `${datosMascota.edad.trim()}` || 'Edad desconocida';
       document.querySelector(".ubicacion-mascota").textContent = datosMascota.ubicacion || 'Ubicación desconocida';
       document.querySelector(".descripcion-mascota").textContent = datosMascota.descripcion || 'Sin descripción';
 
