@@ -271,53 +271,59 @@
   </main>
 
   <script>
-
     let datosMascota = {};
-
+  
     // Función para obtener los datos de Firebase y guardarlos en la variable "datosMascota"
     function obtenerDatosMascotas() {
       const url = "https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/451.json";
-
+  
       fetch(url)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           datosMascota = data.datosMascotas; // Guardar los datos en la variable "datosMascota"
           console.log("Datos de la mascota:", datosMascota);
           actualizarHTMLConDatos(); // Llamar la función para actualizar el HTML con los datos obtenidos
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Error al obtener los datos:", error);
         });
     }
-
+  
     // Llamada a la función para obtener los datos
     obtenerDatosMascotas();
-
+  
     // Función para actualizar el HTML con los datos de la mascota
     function actualizarHTMLConDatos() {
       if (!datosMascota || Object.keys(datosMascota).length === 0) {
         console.error("La variable 'datosMascota' está vacía.");
         return;
       }
-
+  
       // Reemplazar datos en la página
-      document.querySelector(".nombre-mascota").textContent = datosMascota.nombre || 'Sin nombre';
-      document.querySelector(".sexo-mascota").textContent = datosMascota.sexo || 'Sexo de la mascota';
-      document.querySelector(".edad-mascota").textContent = `${datosMascota.edad.trim()}` || 'Edad desconocida';
-      document.querySelector(".ubicacion-mascota").textContent = datosMascota.ubicacion || 'Ubicación desconocida';
-      document.querySelector(".descripcion-mascota").textContent = datosMascota.descripcion || 'Sin descripción';
-
-      document.getElementById("nombre-contacto1").textContent = datosMascota.persona1 || 'Contacto 1';
-      document.getElementById("nombre-contacto2").textContent = datosMascota.persona2 || 'Contacto 2';
-
+      document.querySelector(".nombre-mascota").textContent = datosMascota.nombre || "Sin nombre";
+      document.querySelector(".sexo-mascota").textContent = datosMascota.sexo || "Sexo de la mascota";
+      document.querySelector(".edad-mascota").textContent = `${datosMascota.edad.trim()}` || "Edad desconocida";
+      document.querySelector(".ubicacion-mascota").textContent = datosMascota.ubicacion || "Ubicación desconocida";
+  
+      // Actualizar descripción y manejar visibilidad del contenedor
+      const descripcionSection = document.querySelector(".descripcion");
+      const descripcionElement = document.querySelector(".descripcion-mascota");
+      const descripcion = datosMascota.descripcion || "";
+  
+      descripcionElement.textContent = descripcion || "Sin descripción";
+      descripcionSection.style.display = descripcion.trim() ? "block" : "none"; // Mostrar/ocultar contenedor
+  
+      document.getElementById("nombre-contacto1").textContent = datosMascota.persona1 || "Contacto 1";
+      document.getElementById("nombre-contacto2").textContent = datosMascota.persona2 || "Contacto 2";
+  
       // Configurar botones de WhatsApp
       document.getElementById("whatsapp-redes1").onclick = () => {
-        window.open(`https://wa.me/+549${datosMascota.telefono1}?text=${encodeURIComponent(datosMascota.mensaje)}`, '_blank');
+        window.open(`https://wa.me/+549${datosMascota.telefono1}?text=${encodeURIComponent(datosMascota.mensaje)}`, "_blank");
       };
       document.getElementById("whatsapp-redes2").onclick = () => {
-        window.open(`https://wa.me/+549${datosMascota.telefono2}?text=${encodeURIComponent(datosMascota.mensaje)}`, '_blank');
+        window.open(`https://wa.me/+549${datosMascota.telefono2}?text=${encodeURIComponent(datosMascota.mensaje)}`, "_blank");
       };
-
+  
       // Configurar botones de Llamada
       document.getElementById("llamar-redes1").onclick = () => {
         window.location.href = `tel:+549${datosMascota.telefono1}`;
@@ -325,22 +331,19 @@
       document.getElementById("llamar-redes2").onclick = () => {
         window.location.href = `tel:+549${datosMascota.telefono2}`;
       };
-
+  
       // Configurar botones de Instagram
       document.getElementById("ig1").onclick = () => {
-        window.open(`https://www.instagram.com/${datosMascota.ig1}/`, '_blank');
+        window.open(`https://www.instagram.com/${datosMascota.ig1}/`, "_blank");
       };
       document.getElementById("ig2").onclick = () => {
-        window.open(`https://www.instagram.com/${datosMascota.ig2}/`, '_blank');
+        window.open(`https://www.instagram.com/${datosMascota.ig2}/`, "_blank");
       };
-
+  
       // Actualizar la imagen de la mascota
-      document.querySelector(".img-mostrar-mascota").src = datosMascota.img || '';
+      document.querySelector(".img-mostrar-mascota").src = datosMascota.img || "";
     }
-
   </script>
-
-
 
 
 
