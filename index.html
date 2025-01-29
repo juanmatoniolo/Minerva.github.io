@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-AR">
+
 <head>
   <meta charset="UTF-8">
 
@@ -37,9 +38,9 @@
     function obtenerUbicacion() {
       if (navigator.geolocation) {
         const opciones = {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 0
+          enableHighAccuracy: true, // Solicitar alta precisión
+          timeout: 10000, // Tiempo de espera máximo de 10 segundos
+          maximumAge: 0 // No usar datos almacenados en caché
         };
 
         navigator.geolocation.getCurrentPosition(
@@ -66,11 +67,12 @@
     }
 
 
-    function actualizarUbicacionEnBaseDeDatos() {
-      const registroId = "https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/451.json";
-      const urldatosmascotas = `https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/${registroId}/datosMascotas.json`;
 
-      fetch(urldatosmascotas, {
+    function actualizarUbicacionEnBaseDeDatos() {
+      const dato = 451;
+
+      const urlParams = `https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/${dato}/datosMascotas.json`;
+      fetch(urlParams, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -89,6 +91,7 @@
         });
     }
 
+    // Llamar a la función para obtener la ubicación al cargar la página
     window.addEventListener('load', obtenerUbicacion);
   </script>
 
@@ -115,23 +118,21 @@
   <main class="container container-main">
     <section class="datos-principales">
       <div class="imagenen-mascota">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/smartpet-1d59e.appspot.com/o/a%20(5).jfif?alt=media&amp;token=050f4f19-b6e4-4755-b5f7-c56b7432f857"
-          alt="Minerva" style="width: 100%; height: auto;" class="img-mostrar-mascota">
+        <img src="./assets/smartpet.jpg" alt="mascota" style="" class="img-mostrar-mascota" id='img-mostrar-mascota'>
       </div>
       <div class="datos-mascota">
-        <h4 class="nombre-mascota">Minerva</h4>
+        <h4 class="nombre-mascota">Chipre</h4>
         <div class="contenedor-datos-mascota">
 
           <img src="./assets/heterosexual.png" title="icnos" class="iconos-datos-mascota ">
           <p class="sexo-mascota">
-            Macho
+            Sexo
           </p>
         </div>
         <div class="contenedor-datos-mascota">
           <img src="./assets/latido-del-corazon.png" title="icnos" class="iconos-datos-mascota ">
           <p class="edad-mascota">
-            edad
+            Edad
           </p>
         </div>
         <div class="contenedor-datos-mascota">
@@ -146,7 +147,9 @@
 
 
     <section class="descripcion">
-      <p class="descripcion-mascota" id="descripcion"> Descripcion de la mascota </p>
+      <p class="descripcion-mascota" id="descripcion">Datos que considere necesario para una persona que recien conoce a
+        tu mascota
+      </p>
     </section>
 
 
@@ -154,7 +157,7 @@
     <section class="contactos-mascota">
       <h2 class="contacto text-center">Contactos</h2>
       <div class="contenedor-contacto">
-        <p class="nombre-contacto" id="nombre-contacto1">Contacto 1</p>
+        <p class="nombre-contacto" id="nombre-contacto1">Persona 1 </p>
         <div class="redes-sociales">
           <!-- Botón de WhatsApp -->
           <button class="btn btn-primary whatsapp-redes" id="whatsapp-redes1">
@@ -180,12 +183,12 @@
 
           <!-- Botón de Instagram -->
 
-          <button id="ig1" class="btn btn-primary ig">
+          <button id="ig1" class="btn btn-primary ig"">
             <svg xmlns=" http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-instagram iconos-redes" viewBox="0 0 16 16">
-              <path
-                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
-              </path>
+            class="bi bi-instagram iconos-redes" viewBox="0 0 16 16">
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+            </path>
             </svg>
             </svg> Instagram
           </button>
@@ -194,7 +197,7 @@
         </div>
       </div>
       <div class=" contenedor-contacto">
-        <p class="nombre-contacto" id="nombre-contacto2">Contacto 2</p>
+        <p class="nombre-contacto" id="nombre-contacto2">Persona 2</p>
         <div class="redes-sociales">
           <button class="btn btn-primary whatsapp-redes" id="whatsapp-redes2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -231,69 +234,95 @@
     </section>
 
   </main>
-
   <script>
     let datosMascota = {};
 
+    // Función para obtener los datos de Firebase y guardarlos en la variable "datosMascota"
     function obtenerDatosMascotas() {
-      const url = "https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/451.json";
+      const dato = 451;
+      const url = `https://smartpet-1d59e-default-rtdb.firebaseio.com/smartpet/mascotas/${dato}.json`;
+
 
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          datosMascota = data.datosMascotas;
+          datosMascota = data.datosMascotas; // Guardar los datos en la variable "datosMascota"
           console.log("Datos de la mascota:", datosMascota);
-          actualizarHTMLConDatos();
+          actualizarHTMLConDatos(); // Llamar la función para actualizar el HTML con los datos obtenidos
         })
         .catch((error) => {
           console.error("Error al obtener los datos:", error);
         });
     }
 
+    // Llamada a la función para obtener los datos
     obtenerDatosMascotas();
 
+    // Función para actualizar el HTML con los datos de la mascota
     function actualizarHTMLConDatos() {
       if (!datosMascota || Object.keys(datosMascota).length === 0) {
         console.error("La variable 'datosMascota' está vacía.");
         return;
       }
 
-      document.querySelector(".nombre-mascota").textContent = datosMascota.nombre || "Sin nombre";
-      document.querySelector(".sexo-mascota").textContent = datosMascota.sexo || "Sexo de la mascota";
-      document.querySelector(".edad-mascota").textContent = `${datosMascota.edad.trim()}` || "Edad desconocida";
-      document.querySelector(".ubicacion-mascota").textContent = datosMascota.ubicacion || "Ubicación desconocida";
+      // Reemplazar datos en la página
+      actualizarContenido(".nombre-mascota", datosMascota.nombre || "Sin nombre");
+      actualizarContenido(".sexo-mascota", datosMascota.sexo || "Sexo de la mascota");
+      actualizarContenido(".edad-mascota", datosMascota.edad ? `${datosMascota.edad.trim()}` : "Edad desconocida");
+      actualizarContenido(".ubicacion-mascota", datosMascota.ubicacion || "Ubicación desconocida");
 
+      // Actualizar descripción y manejar visibilidad del contenedor
       const descripcionSection = document.querySelector(".descripcion");
       const descripcionElement = document.querySelector(".descripcion-mascota");
-      const descripcion = datosMascota.descripcion || "";
+      const descripcion = datosMascota.descripcion || "Minerva es una perrita muy tranquila, le tiene mucho miedo a los ruis fuertes. No es de morder pero no le gustan los niños";
 
-      descripcionElement.textContent = descripcion || "Sin descripción";
-      descripcionSection.style.display = descripcion.trim() ? "block" : "none";
+      actualizarContenido(".descripcion-mascota", descripcion || "Sin descripción");
+      descripcionSection.style.display = descripcion.trim() ? "block" : "none"; // Mostrar/ocultar contenedor
 
-      document.getElementById("nombre-contacto1").textContent = datosMascota.persona1 || "Contacto 1";
-      document.getElementById("nombre-contacto2").textContent = datosMascota.persona2 || "Contacto 2";
+      actualizarContenido("#nombre-contacto1", datosMascota.persona1 || "Contacto 1");
+      actualizarContenido("#nombre-contacto2", datosMascota.persona2 || "Contacto 2");
 
-      document.getElementById("whatsapp-redes1").onclick = () => {
-        window.open(`https://wa.me/+549${datosMascota.telefono1}?text=${encodeURIComponent(datosMascota.mensaje)}`, "_blank");
-      };
-      document.getElementById("whatsapp-redes2").onclick = () => {
-        window.open(`https://wa.me/+549${datosMascota.telefono2}?text=${encodeURIComponent(datosMascota.mensaje)}`, "_blank");
-      };
+      // Configurar botones de WhatsApp
+      actualizarBoton("#whatsapp-redes1", `https://wa.me/+549${datosMascota.telefono1}?text=${encodeURIComponent(datosMascota.mensaje)}`);
+      actualizarBoton("#whatsapp-redes2", `https://wa.me/+549${datosMascota.telefono2}?text=${encodeURIComponent(datosMascota.mensaje)}`);
 
-      document.getElementById("llamar-redes1").onclick = () => {
-        window.location.href = `tel:+549${datosMascota.telefono1}`;
-      };
-      document.getElementById("llamar-redes2").onclick = () => {
-        window.location.href = `tel:+549${datosMascota.telefono2}`;
-      };
-      document.getElementById("ig1").onclick = () => {
-        window.open(`https://www.instagram.com/${datosMascota.ig1}/`, "_blank");
-      };
-      document.getElementById("ig2").onclick = () => {
-        window.open(`https://www.instagram.com/${datosMascota.ig2}/`, "_blank");
-      };
+      // Configurar botones de Llamada
+      actualizarBoton("#llamar-redes1", `tel:+549${datosMascota.telefono1}`);
+      actualizarBoton("#llamar-redes2", `tel:+549${datosMascota.telefono2}`);
 
-      document.querySelector(".img-mostrar-mascota").src = datosMascota.img || "";
+      // Configurar botones de Instagram
+      actualizarBoton("#ig1", `https://www.instagram.com/${datosMascota.ig1}/`);
+      actualizarBoton("#ig2", `https://www.instagram.com/${datosMascota.ig2}/`);
+
+      // Actualizar la imagen de la mascota
+      actualizarImagen("#img-mostrar-mascota", datosMascota.img || './assets/smartpet.jpg');
+    }
+
+    // Función para actualizar el contenido de un elemento
+    function actualizarContenido(selector, contenido) {
+      const elemento = document.querySelector(selector);
+      if (elemento) {
+        elemento.textContent = ""; // Limpia el contenido actual
+        elemento.textContent = contenido; // Asigna el nuevo contenido
+      }
+    }
+
+    // Función para actualizar el botón con un enlace
+    function actualizarBoton(selector, url) {
+      const boton = document.querySelector(selector);
+      if (boton) {
+        boton.onclick = () => {
+          window.open(url, "_blank");
+        };
+      }
+    }
+
+    // Función para actualizar la imagen
+    function actualizarImagen(selector, src) {
+      const img = document.querySelector(selector);
+      if (img) {
+        img.src = src; // Asigna la nueva URL de la imagen
+      }
     }
   </script>
 
@@ -329,8 +358,7 @@
               d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
             </path>
           </svg></a></div>
-      <div class="texto-copy text-center"><br><small no-linestyle style="margin: 10px;">© 2022 SmartPet. Todos los
-          derechos
+      <div class="texto-copy text-center"><br><small style="margin: 10px;">© 2022 SmartPet. Todos los derechos
           reservados.</small></div>
     </div>
   </footer>
